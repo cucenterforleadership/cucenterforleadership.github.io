@@ -5,7 +5,7 @@
 <section id="container">
     <main>
         <div class="text-container">
-            <h3>Name in Progress</h3>
+            <h1>CFL Leadership Involvement Quiz</h1>
         </div>
         <div id="active_content">
         </div>
@@ -16,6 +16,9 @@
 <script type="text/javascript" src="yaml.js"></script>
 
 <script>
+
+    const ALL_AFFILIATES_LINK = "https://www.colorado.edu/lead/leadership-community/campus-affiliates"
+    const INSTAGRAM_LINK = "https://www.instagram.com/cucenterforleadership/"
 
     const SELECTIVE_QUESTIONS = [
         {
@@ -59,7 +62,7 @@ window.onload = async function() {
     selectiveQuestionDiv.id = 'selective_questions_div';
     
     SELECTIVE_QUESTIONS.forEach((question, i) =>{
-        const questionElement = document.createElement('p');
+        const questionElement = document.createElement('h4');
         questionElement.innerHTML = question.question;
         const answerElement = document.createElement('select');
         answerElement.id = question.question_id;
@@ -79,21 +82,40 @@ window.onload = async function() {
 
 
     data.fun_questions.forEach((question, i) =>{
-        const questionElement = document.createElement('p');
+        const questionElement = document.createElement('h4');
         questionElement.innerHTML = question.q;
         questionElement.id = `fun_question${i}_div`;
         questionElement.style.display = 'none';
         const answerElement = document.createElement('div');
         answerElement.id = `fun_question${i}`;
+        answerElement.className = 'fun_question_option_container';
         // answerElement.addEventListener('change', updateResults);
         question.answers.forEach((answer, j) => {
             const button = document.createElement('button');
-            option.name = `fun_question${i}`;
-            option.id = `fun_question${i}_option${j}`;
-            option.onclick = function() {
-                questionIncrement(1, updateResults)
+            button.name = `fun_question${i}`;
+            button.id = `fun_question${i}_option${j}`;
+            button.className = 'fun_question_option';
+            button.onclick = function() {
+                questionIncrement(1, updateResults);
+                answer.affiliates.forEach((aff, k) => {
+                    data.affiliates.forEach((m_aff, l) => {
+                        if (m_aff.name == aff){
+                            if (m_aff.points == null){
+                                m_aff.points = 0;
+                            }
+                            m_aff.points += 1;
+                        }
+                    });
+                    
+                });
             };
-            option.innerHTML = answer.a;
+            button.innerHTML = `<h4>${answer.a}</h4>`;
+            if (answer.img != null){
+                const image = document.createElement('img');
+                image.src = answer.img;
+                image.className = 'fun_question_option_image';
+                button.appendChild(image);
+            }
             answerElement.appendChild(button);
         });
         questionElement.appendChild(answerElement);
@@ -101,16 +123,21 @@ window.onload = async function() {
         TOTAL_Q_NUM = i;
     })
 
-
+    
     let affiliate_list_content = document.createElement('div');
     affiliate_list_content.id = 'affiliatesListContent';
     affiliate_list_content.style.display = 'none';
-    affiliate_list_content.innerHTML = '<h3>Your Top 5 Choices: </h3>';
+    affiliate_list_content.innerHTML = `<h3>Your Top 5 Choices: </h3>`;
     let affiliate_list = document.createElement('ul');
     affiliate_list.id = 'affiliatesList';
     affiliate_list_content.appendChild(affiliate_list);
     questionDiv.appendChild(affiliate_list_content);
-
+    let all_affiliates_p = document.createElement("div")
+    all_affiliates_p.innerHTML = `<a href="${ALL_AFFILIATES_LINK}" target="blank"><h4>See more affiliates <u>here</u></h4></a>
+    <br>
+    <a href="${INSTAGRAM_LINK}" target="blank"><h4>Check us out on Instagram: @cucenterforleadership</h4></a>`
+    affiliate_list_content.appendChild(all_affiliates_p)
+    
     let nextButton = document.createElement('button');
     nextButton.innerHTML = "Next";
     nextButton.id = 'nextButton';
@@ -119,7 +146,7 @@ window.onload = async function() {
 };
 
 function questionIncrement(i, finalFunc) {
-    console.log(CURRENT_Q_NUM, TOTAL_Q_NUM)
+    // console.log(CURRENT_Q_NUM, TOTAL_Q_NUM)
     if (CURRENT_Q_NUM == TOTAL_Q_NUM){
         document.getElementById(`fun_question${CURRENT_Q_NUM}_div`).style.display = 'none';
         document.getElementById(`affiliatesListContent`).style.display = 'block';
@@ -131,9 +158,10 @@ function questionIncrement(i, finalFunc) {
         return;
     } else if (CURRENT_Q_NUM == -1){
         document.getElementById(`selective_questions_div`).style.display = 'none';
-        document.getElementById(`nextButton`).style.display = 'block';
+        document.getElementById(`nextButton`).style.display = 'none';
     } else {
         document.getElementById(`fun_question${CURRENT_Q_NUM}_div`).style.display = 'none';
+        document.getElementById(`nextButton`).style.display = 'none';
     }
     CURRENT_Q_NUM += i;
     let next_question_element = document.getElementById(`fun_question${CURRENT_Q_NUM}_div`);
@@ -145,62 +173,68 @@ function questionIncrement(i, finalFunc) {
 function getAffiliates(data) {
     
     mutable_affiliates = JSON.parse(JSON.stringify(data.affiliates));
-    
+    console.log(mutable_affiliates)
     let yearsRemaining = document.getElementById('yearSelect').value;
     let studentCollege = document.getElementById('collegeSelect').value;
     let studentLevel = document.getElementById('levelSelect').value;
     let studentEnrollment = document.getElementById('enrollmentSelect').value;
 
+    console.log(yearsRemaining, studentCollege, studentLevel, studentEnrollment)
+
     mutable_affiliates.forEach(a => {
         eligible = true;
+        // console.log("Years remaining:", a.years_remaining)
         if (a.years_remaining != null && a.years_remaining > yearsRemaining){
             eligible = false
+            // console.log(a.years_remaining, yearsRemaining)
         }
         if (a.college != null && a.college != studentCollege){
             eligible = false
+            // console.log(a.college, studentCollege)
         }
         if (a.degree_level != null && a.degree_level != studentLevel){
             eligible = false
+            // console.log(a.degree_level, studentLevel)
         }
         if (a.enrollment_status != null && a.enrollment_status != studentEnrollment){
             eligible = false
+            // console.log(a.enrollment_status, studentEnrollment)
         }
         a.eligible_status = eligible;
-        a.points = 0;
+        if (a.points == null){
+            a.points = 0;
+        }
     });
 
 
-    data.fun_questions.forEach((question, i) =>{
-        const answerElement = document.getElementById(`fun_question${i}`);
-        const answer = answerElement.value;
-        question.answers.forEach((a, j) => {
-            if (a.a == answer){
-                a.affiliates.forEach((aff, k) => {
-                    mutable_affiliates.forEach((m_aff, l) => {
-                        if (m_aff.name == aff){
-                            m_aff.points += 1;
-                        }
-                    });
-                });
-            }
-        });
-    });
 
 
+    console.log(mutable_affiliates);
 
     const result_list = document.getElementById('affiliatesList');
     while (result_list.firstChild) {
         result_list.removeChild(result_list.firstChild);
     }
 
-    mutable_affiliates.sort((a, b) => b.points - a.points);
-    mutuable_affiliates = mutable_affiliates.filter(a => a.eligible_status);
+
+    // Randomize the affiliates
+    for (let i = mutable_affiliates.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [mutable_affiliates[i], mutable_affiliates[j]] = [mutable_affiliates[j], mutable_affiliates[i]];
+    }
+    // Sort the affiliates by points
+    mutable_affiliates.sort((a, b) => b.points > a.points);
+    
+    
 
     mutable_affiliates.forEach((affiliate, i) => {
-        if (i < 5){
-            const li = document.createElement('li');
-            li.innerHTML = `<a href="${affiliate.url}" target='blank'>${affiliate.name}</a>`;
-            result_list.appendChild(li);
+        if (result_list.childElementCount < 5){
+            if (affiliate.eligible_status){
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="${affiliate.url}" target='blank'>${affiliate.name}</a>`;
+                result_list.appendChild(li);
+                console.log(affiliate);
+            }
         }
     });
 }
@@ -228,8 +262,55 @@ function getAffiliates(data) {
 
 <style>
 /* CSS from here: https://codepen.io/shamxeed/pen/KKzgByY */
+
+.fun_question_option_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+}
+
+.fun_question_option {
+    background: white;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 2px;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    margin: 5px;
+}
+
+#nextButton {
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  width: 200px;
+  outline: none;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  touch-action: manipulation;
+  margin: auto;
+}
+
+.fun_question_option_image {
+    width: 100%;
+    margin: 1rem 0 0 0;
+}
+
 html {
     box-sizing: border-box;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 *,
@@ -273,7 +354,7 @@ main {
     border-radius: 10px;
     padding: 5px 20px 50px;
     width: 95%;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto 214px;
 }
 
@@ -319,6 +400,36 @@ label .alphabet {
     justify-content: center;
     color: #000;
 }
+
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 90%;
+  padding: 1rem 4rem 1rem 1rem;
+  background: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin: .5rem;
+  /* Remove IE arrow */
+  &::-ms-expand {
+    display: none;
+  }
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+  /* <option> colors */
+  option {
+    color: inherit;
+    background-color: var(--option-bg);
+  }
+}
+
 
 label .icon {
     height: auto;
@@ -495,7 +606,6 @@ h1::before {
     49% {
         opacity: 9;
     }
-
     50% {
         opacity: .8;
     }

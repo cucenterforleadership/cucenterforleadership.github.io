@@ -124,6 +124,7 @@ fun_questions:
 - q: Choose a Weekend Activity
   answers:
     - a: Volunteering at a local community center
+      img: https://www.colorado.edu/support/basicneeds/sites/default/files/styles/medium/public/block/Mobile%20Food%20Pantry_BNC_20230302_FM_018.jpg
       affiliates:
         - Center for Ethics and Social Responsibility
         - Dalai Lama Fellows
@@ -131,14 +132,17 @@ fun_questions:
         - INVST Community Leadership Program
         - Volunteer Resource Center
     - a: Attending a political debate or event
+      img: https://www.colorado.edu/coloradan/sites/default/files/styles/hero/public/article-image/quintanillawideatmospheric-copy.jpg
       affiliates:
         - Peace, Conflict, and Security Program
         - Conference on World Affairs
     - a: Participating in an engineering or innovation challenge
+      img: https://www.colorado.edu/sites/default/files/styles/large/public/article-image/copy-of-nvc_championships16ga.jpg
       affiliates:
         - Engineering Management Program
         - Engineering Leadership Program
     - a: Networking at a business conference
+      img: https://www.colorado.edu/business/sites/default/files/styles/hero/public/article-image/2023-10-20_0.png
       affiliates:
         - Master of Science in Organizational Leadership
         - Business Leadership Certificate
@@ -148,12 +152,14 @@ fun_questions:
 - q: What's Your Preferred Work Environment?
   answers:
     - a: In the great outdoors
+      img: https://www.colorado.edu/recreation/sites/default/files/styles/large_square_thumbnail/public/callout/outdoor_programs_hiking_and_backpacking_20130817_018.jpg
       affiliates:
         - Air Force ROTC
         - Army ROTC
         - Navy ROTC
         - Outdoor Pursuits
     - a: In a bustling city
+      img: https://free-images.com/md/410e/city_streets_skyline_buildings.jpg
       affiliates:
         - Leadership & Community Engagement Major
         - Conference on World Affairs
@@ -161,12 +167,14 @@ fun_questions:
         - Residence Hall Association
         - Education Abroad
     - a: In a tech lab or workshop
+      img: https://www.colorado.edu/today/sites/default/files/styles/hero/public/article-image/green_labs.cc04.jpg
       affiliates:
         - Certificate in Social Innovation Program
         - Engineering Leadership Program
         - Engineering Management Program
         - Innovation & Entrepreneurship Initiative
     - a: In a boardroom or office setting
+      img: https://www.colorado.edu/recreation/sites/default/files/styles/large_wide_thumbnail/public/callout/outdoor_program_classroom.jpg
       affiliates:
         - Master of Science in Organizational Leadership
         - Business Leadership Certificate
@@ -176,11 +184,13 @@ fun_questions:
 - q: Which Social Cause Resonates with You the Most?
   answers:
     - a: Environmental conservation
+      img: https://www.colorado.edu/menv/sites/default/files/styles/large/public/page/solar_panels.jpg
       affiliates:
         - Center for Ethics and Social Responsibility
         - Conference on World Affairs
         - Outdoor Pursuits
     - a: Social justice and equality
+      img: https://www.colorado.edu/cisc/sites/default/files/styles/small/public/page/ignite_logo_with_subtitle-03.png
       affiliates:
         - Certificate in Social Innovation Program
         - Dalai Lama Fellows
@@ -191,6 +201,7 @@ fun_questions:
         - Student Academic Success Center
         - Residence Hall Association
     - a: Education and innovation
+      img: https://www.colorado.edu/sites/default/files/styles/large/public/article-image/copy-of-nvc_championships16ga.jpg
       affiliates:
         - Entrepreneurship Center for Music
         - Leadership & Community Engagement Major
@@ -199,6 +210,7 @@ fun_questions:
         - Innovation & Entrepreneurship Initiative
         - Education Abroad
     - a: Economic development
+      img: https://www.colorado.edu/today/sites/default/files/styles/medium/public/article-thumbnail/colorado_quantum_workforce_development_pc_0003.jpg
       affiliates:
         - Business Leadership Certificate
         - Leeds Consulting Group
@@ -207,6 +219,7 @@ fun_questions:
 - q: What's Your Favorite Leadership Movie?
   answers:
     - a: "Dead Poets Society"
+      img: https://i.guim.co.uk/img/media/8d9e6ba5e54fa16afc7ee6ebed8c6ba546a42131/0_6_1724_1035/master/1724.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=9e4ef7a7fbb0f4d40cae74834285d731
       affiliates:
         - Leadership & Community Engagement Major
         - Leadership Studies Minor
@@ -215,6 +228,7 @@ fun_questions:
         - Journey Leaders Program
         - CU GOLD
     - a: "The West Wing"
+      img: https://i.guim.co.uk/img/media/d07209008b3a4730cc5996a611109301b35b135f/0_151_578_347/master/578.jpg?width=1200&quality=85&auto=format&fit=max&s=9ffe336d0ddbe01f0c9661e4c549e149
       affiliates:
         - Air Force ROTC
         - Army ROTC
@@ -223,11 +237,13 @@ fun_questions:
         - Navy ROTC
         - Master of Science in Organizational Leadership
     - a: "The Social Network"
+      img: https://static01.nyt.com/images/2020/10/05/arts/05social-network01/05social-network01-superJumbo-v3.jpg
       affiliates:
         - Engineering Leadership Program
         - Engineering Management Program
         - Innovation & Entrepreneurship Initiative
     - a: "The Pursuit of Happyness"
+      img: https://www.pluggedin.com/wp-content/uploads/2019/12/the-pursuit-of-happyness.jpg
       affiliates:
         - Center for Ethics and Social Responsibility
         - Multicultural Leadership Scholars
@@ -236,6 +252,7 @@ fun_questions:
 - q: Pick a Superpower
   answers:
     - a: Healing and empathy
+      img: 
       affiliates:
         - Center for Ethics and Social Responsibility
         - Certificate in Social Innovation Program
@@ -247,6 +264,7 @@ fun_questions:
         - Student Academic Success Center
         - Residence Hall Association
     - a: Mind-reading and strategy
+      img: 
       affiliates:
         - Business Leadership Certificate
         - Herd Leadership Council
@@ -258,6 +276,7 @@ fun_questions:
         - Navy ROTC
         - Master of Science in Organizational Leadership
     - a: Shape-shifting and adaptability
+      img: 
       affiliates:
         - Presidents Leadership Class
         - Conference on World Affairs
@@ -265,46 +284,15 @@ fun_questions:
         - SCRIPPS Leadership & Career Development Program
         - CU GOLD
     - a: Time manipulation and efficiency
+      img: 
       affiliates:
         - Engineering Leadership Program
         - Engineering Management Program
         - Innovation & Entrepreneurship Initiative
-- q: Choose a Book Genre
-  answers:
-    - a: Non-fiction and memoirs
-      affiliates:
-        - Dalai Lama Fellows
-        - Entrepreneurship Center for Music
-        - Conference on World Affairs
-        - Journey Leaders Program
-        - Volunteer Resource Center
-        - Student Academic Success Center
-        - Education Abroad
-    - a: Political thrillers and mysteries
-      affiliates:
-        - Center for Ethics and Social Responsibility
-    - a: Science fiction and innovation
-      affiliates:
-        - Certificate in Social Innovation Program
-        - Engineering Leadership Program
-        - Engineering Management Program
-        - Innovation & Entrepreneurship Initiative
-    - a: Business and leadership
-      affiliates:
-        - Air Force ROTC
-        - Army ROTC
-        - Business Leadership Certificate
-        - Leadership & Community Engagement Major
-        - Leadership Studies Minor
-        - Leeds Consulting Group
-        - Leeds Global Initiatives & Programs
-        - Leeds Scholars
-        - Presidents Leadership Class
-        - Navy ROTC
-        - Master of Science in Organizational Leadership
 - q: What's Your Favorite Type of Team Building Activity?
   answers:
     - a: Outdoor adventure challenges
+      img: https://www.colorado.edu/orientation/sites/default/files/styles/large_wide_thumbnail/public/callout/ropes_course.png
       affiliates:
         - Air Force ROTC
         - Army ROTC
@@ -313,6 +301,7 @@ fun_questions:
         - Outdoor Pursuits
         - Education Abroad
     - a: Debates and discussions
+      img: https://www.colorado.edu/today/sites/default/files/styles/hero/public/article-image/coloradan_conversations_speaker_panel_-_mental_health_feb._2023.png
       affiliates:
         - Center for Ethics and Social Responsibility
         - Certificate in Social Innovation Program
@@ -322,11 +311,13 @@ fun_questions:
         - Peace, Conflict, and Security Program
         - Conference on World Affairs
     - a: Hackathons and innovation workshops
+      img: https://www.colorado.edu/cs/sites/default/files/styles/hero/public/article-image/cs-hackcu-0415.jpg
       affiliates:
         - Engineering Leadership Program
         - Innovation & Entrepreneurship Initiative
         - Dalai Lama Fellows
     - a: Networking events and business simulations
+      img: https://www.colorado.edu/business/sites/default/files/styles/large_wide_thumbnail/public/callout/female-speaker-at-cesr-case-competition_0.jpg
       affiliates:
         - Business Leadership Certificate
         - Engineering Management Program
