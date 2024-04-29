@@ -7,8 +7,7 @@
         <div class="text-container">
             <h1>CFL Leadership Involvement Quiz</h1>
         </div>
-        <div id="active_content">
-        </div>
+        <div id="active_content"></div>
     </main>
 </section>
 
@@ -134,7 +133,6 @@ window.onload = async function() {
     questionDiv.appendChild(affiliate_list_content);
     let all_affiliates_p = document.createElement("div")
     all_affiliates_p.innerHTML = `<a href="${ALL_AFFILIATES_LINK}" target="blank"><h4>See more affiliates <u>here</u></h4></a>
-    <br>
     <a href="${INSTAGRAM_LINK}" target="blank"><h4>Check us out on Instagram: @cucenterforleadership</h4></a>`
     affiliate_list_content.appendChild(all_affiliates_p)
     
@@ -263,6 +261,10 @@ function getAffiliates(data) {
 <style>
 /* CSS from here: https://codepen.io/shamxeed/pen/KKzgByY */
 
+#active_content {
+    color: white;
+}
+
 .fun_question_option_container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -284,11 +286,11 @@ function getAffiliates(data) {
 }
 
 #nextButton {
-  background-color: #000000;
+  background-color: white;
   border: 2px solid #1A1A1A;
   border-radius: 15px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: black;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
@@ -342,15 +344,15 @@ a {
 
 section {
     background: gold;
-    background: -webkit-linear-gradient(to right, gold, gray);
-    background: linear-gradient(to right, gold, gray);
+    background-image: url('./background.jpg');
+    background-position: 50% 0;
     padding-top: 80px;
     overflow-y: hidden;
     height: 100%;
 }
 
 main {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     padding: 5px 20px 50px;
     width: 95%;
@@ -360,6 +362,7 @@ main {
 
 .text-container {
     text-align: center;
+    color: white;
 }
 
 .quiz-options {
@@ -382,7 +385,7 @@ label {
     padding: 6px 0;
     position: relative;
     width: 100%;
-    color: #000;
+    color: white;
 }
 
 label:hover .alphabet {
