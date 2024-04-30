@@ -229,7 +229,7 @@ function getAffiliates(data) {
         if (result_list.childElementCount < 5){
             if (affiliate.eligible_status){
                 const li = document.createElement('li');
-                li.innerHTML = `<a href="${affiliate.url}" target='blank'>${affiliate.name}</a>`;
+                li.innerHTML = `<a href="${affiliate.url}" target='blank'><u>${affiliate.name}</u></a>`;
                 result_list.appendChild(li);
                 console.log(affiliate);
             }
@@ -323,18 +323,16 @@ html {
 
 html,
 body {
-    overflow: hidden;
-    position: relative;
-    height: 100%;
-}
-
-body {
-    background: gold;
+    /* position: relative; */
+    min-height: 100%;
     color: black;
     user-select: none;
     margin: 0;
     padding: 0;
     counter-reset: points;
+    background-image: url('./background.jpg');
+    background-size: 150%;
+    background-position: 50% 0;
 }
 
 a {
@@ -343,11 +341,7 @@ a {
 }
 
 section {
-    background: gold;
-    background-image: url('./background.jpg');
-    background-position: 50% 0;
     padding-top: 80px;
-    overflow-y: hidden;
     height: 100%;
 }
 
@@ -405,6 +399,12 @@ select {
     color: inherit;
     background-color: var(--option-bg);
   }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-size: 200%;
+    }
 }
 
 
