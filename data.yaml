@@ -36,6 +36,9 @@ affiliates:
     url: https://www.colorado.edu/music/academics/centers-and-programs/entrepreneurship-center-music
     college: College of Music
 
+  -name: Fraternity & Sorority Life
+    url: https://www.colorado.edu/greeks/
+
   - name: Herd Leadership Council
     url: https://www.colorado.edu/theherd/herdleadershipcouncil
     enrollment_status: full-time
@@ -131,6 +134,7 @@ fun_questions:
         - Herd Leadership Council
         - INVST Community Leadership Program
         - Volunteer Resource Center
+        - Fraternity & Sorority Life
     - a: Attending a political debate or event
       img: https://www.colorado.edu/coloradan/sites/default/files/styles/hero/public/article-image/quintanillawideatmospheric-copy.jpg
       affiliates:
@@ -166,6 +170,7 @@ fun_questions:
         - Journey Leaders Program
         - Residence Hall Association
         - Education Abroad
+        - Fraternity & Sorority Life
     - a: In a tech lab or workshop
       img: https://www.colorado.edu/today/sites/default/files/styles/hero/public/article-image/green_labs.cc04.jpg
       affiliates:
@@ -216,7 +221,8 @@ fun_questions:
         - Leeds Consulting Group
         - SCRIPPS Leadership & Career Development Program
         - Master of Science in Organizational Leadership
-- q: What's Your Favorite Leadership Movie?
+        - Fraternity & Sorority Life
+- q: What Movie Would You Prefer?
   answers:
     - a: "Dead Poets Society"
       img: https://i.guim.co.uk/img/media/8d9e6ba5e54fa16afc7ee6ebed8c6ba546a42131/0_6_1724_1035/master/1724.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=9e4ef7a7fbb0f4d40cae74834285d731
@@ -242,6 +248,7 @@ fun_questions:
         - Engineering Leadership Program
         - Engineering Management Program
         - Innovation & Entrepreneurship Initiative
+        - Fraternity & Sorority Life
     - a: "The Pursuit of Happyness"
       img: https://www.pluggedin.com/wp-content/uploads/2019/12/the-pursuit-of-happyness.jpg
       affiliates:
@@ -283,6 +290,7 @@ fun_questions:
         - Journey Leaders Program
         - SCRIPPS Leadership & Career Development Program
         - CU GOLD
+        - Fraternity & Sorority Life
     - a: Time manipulation and efficiency
       img: 
       affiliates:
@@ -328,3 +336,4 @@ fun_questions:
         - Presidents Leadership Class
         - SCRIPPS Leadership & Career Development Program
         - Master of Science in Organizational Leadership
+        - Fraternity & Sorority Life
